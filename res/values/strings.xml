@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">YAPP</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_common__signup">Common_Signup</string>
+    <string name="title_activity_manager__signup">Manager_Signup</string>
+    <string name="title_activity_push_setting">PushSetting</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_admin_tab">AdminTabActivity</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_activity_add_item">AddItemActivity</string>
+
+</resources>
