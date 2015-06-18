@@ -11,6 +11,8 @@ import com.android.volley.toolbox.*;
 
 import android.app.*;
 import android.content.*;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.*;
 import android.view.*;
@@ -30,6 +32,10 @@ public class Comer_Signup extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.manager__signup);
 
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
+		
 		id = (EditText) findViewById(R.id.signupIdEdit);
 		pw = (EditText) findViewById(R.id.signupPwEdit);
 		repw = (EditText) findViewById(R.id.rePwEdit);

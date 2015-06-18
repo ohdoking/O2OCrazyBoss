@@ -8,7 +8,7 @@ package com.yapp.bosscrazylib;
 
 public final class R {
 	public static final class anim {
-		public static final int fab_press_elevation = 0x7f04000a;
+		public static final int fab_press_elevation = 0x7f04000b;
 	}
 	public static final class array {
 		public static final int androidcolors = 0x7f0b0000;
@@ -65,7 +65,7 @@ public final class R {
 		public static final int psts_background_tab_pressed_ripple = 0x7f08001c;
 		public static final int purple = 0x7f08001e;
 		public static final int red = 0x7f080021;
-		public static final int selector = 0x7f080071;
+		public static final int selector = 0x7f080073;
 		public static final int tabsScrollColor = 0x7f080019;
 	}
 	public static final class dimen {
@@ -82,38 +82,35 @@ public final class R {
 		public static final int tabhostHeight = 0x7f0c0008;
 	}
 	public static final class drawable {
-		public static final int border = 0x7f02003b;
-		public static final int fab_shadow = 0x7f020056;
-		public static final int fab_shadow_mini = 0x7f020057;
-		public static final int ic_group_black_24dp = 0x7f020058;
-		public static final int ic_launcher = 0x7f020059;
-		public static final int ic_notifications_off_white_24dp = 0x7f02005a;
-		public static final int ic_person_black_24dp = 0x7f02005b;
-		public static final int left_arrow = 0x7f020060;
-		public static final int psts_background_tab = 0x7f020068;
-		public static final int right_arrow = 0x7f020069;
+		public static final int border = 0x7f020040;
+		public static final int fab_shadow = 0x7f02005f;
+		public static final int fab_shadow_mini = 0x7f020060;
+		public static final int ic_group_black_24dp = 0x7f020063;
+		public static final int ic_launcher = 0x7f020064;
+		public static final int ic_notifications_off_white_24dp = 0x7f020065;
+		public static final int ic_person_black_24dp = 0x7f020066;
+		public static final int left_arrow = 0x7f02006b;
+		public static final int psts_background_tab = 0x7f02007a;
+		public static final int right_arrow = 0x7f02007d;
 	}
 	public static final class id {
-		public static final int action_admin = 0x7f0d00bb;
-		public static final int action_map = 0x7f0d00b9;
-		public static final int action_push = 0x7f0d00ba;
+		public static final int action_admin = 0x7f0d00bd;
 		public static final int back = 0x7f0d0026;
 		public static final int bold = 0x7f0d0024;
 		public static final int close = 0x7f0d0027;
 		public static final int drawer = 0x7f0d0028;
 		public static final int italic = 0x7f0d0025;
-		public static final int item_icon = 0x7f0d008e;
-		public static final int item_icon_group = 0x7f0d008d;
-		public static final int item_title = 0x7f0d0090;
-		public static final int item_title2 = 0x7f0d0091;
-		public static final int item_title3 = 0x7f0d0092;
-		public static final int item_title4 = 0x7f0d008f;
+		public static final int item_icon = 0x7f0d0093;
+		public static final int item_icon_group = 0x7f0d0092;
+		public static final int item_title = 0x7f0d0095;
+		public static final int item_title2 = 0x7f0d0096;
+		public static final int item_title3 = 0x7f0d0097;
+		public static final int item_title4 = 0x7f0d0094;
 		public static final int left = 0x7f0d0000;
 		public static final int mini = 0x7f0d0023;
 		public static final int normal = 0x7f0d000f;
 		public static final int plus = 0x7f0d0029;
 		public static final int right = 0x7f0d0001;
-		public static final int setting = 0x7f0d00b8;
 	}
 	public static final class integer {
 		public static final int av_animationDuration = 0x7f090003;
@@ -121,29 +118,29 @@ public final class R {
 		public static final int rcv_animationDurationReveal = 0x7f090002;
 	}
 	public static final class layout {
-		public static final int activity_main = 0x7f03001c;
-		public static final int item_layout = 0x7f030023;
+		public static final int activity_main = 0x7f03001e;
+		public static final int item_layout = 0x7f030025;
 	}
 	public static final class menu {
 		public static final int main = 0x7f0e0004;
 	}
 	public static final class string {
 		public static final int action_settings = 0x7f070032;
-		public static final int app_name = 0x7f070030;
-		public static final int define_FloatingActionButton = 0x7f070026;
+		public static final int app_name = 0x7f070026;
+		public static final int define_FloatingActionButton = 0x7f070027;
 		public static final int demo_collection = 0x7f070040;
 		public static final int demo_external_activity = 0x7f07003f;
 		public static final int dummy_section_text = 0x7f07003e;
 		public static final int hello_world = 0x7f070031;
-		public static final int library_FloatingActionButton_author = 0x7f070027;
-		public static final int library_FloatingActionButton_authorWebsite = 0x7f070028;
-		public static final int library_FloatingActionButton_isOpenSource = 0x7f07002d;
-		public static final int library_FloatingActionButton_libraryDescription = 0x7f07002a;
-		public static final int library_FloatingActionButton_libraryName = 0x7f070029;
-		public static final int library_FloatingActionButton_libraryVersion = 0x7f07002c;
-		public static final int library_FloatingActionButton_libraryWebsite = 0x7f07002b;
-		public static final int library_FloatingActionButton_licenseId = 0x7f07002f;
-		public static final int library_FloatingActionButton_repositoryLink = 0x7f07002e;
+		public static final int library_FloatingActionButton_author = 0x7f070028;
+		public static final int library_FloatingActionButton_authorWebsite = 0x7f070029;
+		public static final int library_FloatingActionButton_isOpenSource = 0x7f07002e;
+		public static final int library_FloatingActionButton_libraryDescription = 0x7f07002b;
+		public static final int library_FloatingActionButton_libraryName = 0x7f07002a;
+		public static final int library_FloatingActionButton_libraryVersion = 0x7f07002d;
+		public static final int library_FloatingActionButton_libraryWebsite = 0x7f07002c;
+		public static final int library_FloatingActionButton_licenseId = 0x7f070030;
+		public static final int library_FloatingActionButton_repositoryLink = 0x7f07002f;
 		public static final int title_activity_admin_tab = 0x7f07003c;
 		public static final int title_activity_admin_tab_acitivity = 0x7f070036;
 		public static final int title_activity_admin_tab_activity2 = 0x7f07003a;

@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:background="@drawable/ic_launcher"
+        android:background="@drawable/map"
         app:fab_colorNormal="@color/primary"
         app:fab_colorPressed="@color/primary_dark"
         app:fab_colorRipple="@color/ripple"

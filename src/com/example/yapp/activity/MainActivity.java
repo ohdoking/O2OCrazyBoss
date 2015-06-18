@@ -60,6 +60,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private FloatingActionButton floatingActionButton;
     MyDataShared mds;
     
+    int isAdmin = 0;
 
 	private String storeId;// = {"101","102","103"};
     
@@ -67,6 +68,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
  
         mds = new MyDataShared(getApplicationContext());
         listView = (ListView) findViewById(R.id.list);
@@ -77,13 +82,9 @@ public class MainActivity extends Activity implements OnItemClickListener {
         Log.i("ohdokingStoreId",storeId);
         listView.setOnItemClickListener(this);
         
-      
- 
-        // changing action bar color
-        getActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#1b1b1b")));
         
         floatingActionButton = (FloatingActionButton) findViewById(R.id.addButton);
+        floatingActionButton.setImageResource(R.drawable.map);
         final Context scope = this;
         floatingActionButton.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -151,7 +152,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         getProductList(storeId);
         
         
-      
+//       isAdmin = 1;
         
        
         
@@ -281,7 +282,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 //		
 		super.onCreateOptionsMenu(menu);
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.main, menu);
+	    
+	    if(isAdmin == 0){
+	    	
+	    	inflater.inflate(R.menu.main, menu);
+	    }
 
 	    
 
@@ -294,17 +299,17 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_map) {
+		/*if (id == R.id.action_map) {
 			Intent i = new Intent(MainActivity.this,MapActivity.class);
 			startActivity(i);
 			return true;
-		}
+		}*/
 		/*else if (id == R.id.action_push) {
 			Intent i = new Intent(MainActivity.this,PushActivity.class);
 			startActivity(i);
 			return true;
 		}*/
-		else if (id == R.id.action_admin) {
+		if(id == R.id.action_admin) {
 			Intent i = new Intent(MainActivity.this,TabActivity.class);
 			startActivity(i);
 			return true;

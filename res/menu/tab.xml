@@ -4,7 +4,7 @@
 
    <item
       android:id="@+id/add_item"
-      android:icon="@drawable/ic_launcher"
+      android:icon="@drawable/new_icon"
       android:orderInCategory="20"
       android:showAsAction="ifRoom"
       android:title="상품등록">

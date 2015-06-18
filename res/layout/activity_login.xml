@@ -52,34 +52,37 @@
                 android:id="@+id/pwEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:password="true"
                 android:maxLength="15"
                 android:singleLine="true" />
         </LinearLayout>
 
         <Button
             android:id="@+id/loginBtn"
+            style="@style/CustomStyleBlueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:text="LOGIN" />
+            android:text="로그인" />
 
         <Button
             android:id="@+id/signBtn"
+            style="@style/CustomStyleRedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:text="SIGN UP" />
+            android:text="회원 가입" />
 
         <CheckBox
             android:id="@+id/isCommer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="manager Login" />
+            android:text="Manager Login" />
 
     </LinearLayout>
 

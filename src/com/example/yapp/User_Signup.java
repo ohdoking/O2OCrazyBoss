@@ -13,6 +13,8 @@ import android.content.*;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.*;
 import android.util.Log;
 import android.view.*;
@@ -47,6 +49,10 @@ public class User_Signup extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.common__signup);
+		
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
 		
 		init();
 		
@@ -125,7 +131,7 @@ public class User_Signup extends Activity {
 
 			@Override
 			protected void onPostExecute(String msg) {
-				mDisplay.append(msg + "\n");
+//				mDisplay.append(msg + "\n");
 			}
 		}.execute(null, null, null);
 	}

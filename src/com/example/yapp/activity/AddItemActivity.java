@@ -90,7 +90,7 @@ public class AddItemActivity extends Activity {
 		// These two lines are not needed
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(Color.parseColor(getResources().getString(
-						R.color.accent))));
+						R.color.navy))));
 
 		btnCapturePicture = (ImageView) findViewById(R.id.uploadImgPreview);
 		productName = (TextView) findViewById(R.id.uploadProductName);

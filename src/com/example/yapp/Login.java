@@ -6,6 +6,8 @@ import org.json.*;
 
 import android.app.*;
 import android.content.*;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.*;
 import android.util.*;
 import android.view.*;
@@ -19,6 +21,9 @@ import com.android.volley.Request.Method;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.*;
 import com.example.yapp.activity.MainActivity;
+import com.example.yapp.o2o.O2OCallbacks;
+import com.example.yapp.o2o.O2OSampleApplication;
+import com.skt.o2o.client.O2OLib;
 
 public class Login extends Activity implements OnClickListener,
 		OnCheckedChangeListener {
@@ -29,17 +34,36 @@ public class Login extends Activity implements OnClickListener,
 	private CheckBox isCommer;
 	private String userAgent;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
 		init();
+	}
 
+	@Override
+	protected void onResume() {
+
+		super.onResume();
+
+		Bundle bu = getIntent().getExtras();
+
+		if (bu != null) {
+			String url = bu.getString("eventUrl");
+			Toast.makeText(this, "url : " + url, 0).show();
+		} else {
+			Toast.makeText(this, "intent data is null", 0).show();
+		}
 	}
 
 	private void init() {
 
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
+		
 		loginBtn = (Button) findViewById(R.id.loginBtn);
 		signBtn = (Button) findViewById(R.id.signBtn);
 		idEditText = (EditText) findViewById(R.id.idEditText);
@@ -75,9 +99,11 @@ public class Login extends Activity implements OnClickListener,
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		layout.setLayoutParams(params);
-		Button common = new Button(context);
+		ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.CustomStyleBlueButton);
+		Button common = new Button(newContext);
 		common.setText("일반");
-		Button manager = new Button(context);
+		ContextThemeWrapper newContext2 = new ContextThemeWrapper(context, R.style.CustomStyleRedButton);
+		Button manager = new Button(newContext2);
 		manager.setText("관리자");
 		layout.addView(common);
 		layout.addView(manager);
@@ -125,10 +151,19 @@ public class Login extends Activity implements OnClickListener,
 					final String value = output.getString("sending");
 
 					if (value.equals("success")) {
-						Toast.makeText(context, "로그인 성공", Toast.LENGTH_SHORT)
-								.show();
-						 Intent intent = new Intent(context,MainActivity.class);
-						 startActivity(intent);
+						Toast.makeText(context, "로그인 성공", Toast.LENGTH_SHORT).show();
+						
+						//사용자가 이벤트 실행 시 통계 보고를 위해 필요한 위치
+						if(O2OSampleApplication.eventReceived != null) {
+							
+							O2OLib.reportEvent(O2OSampleApplication.eventReceived);  
+						} 
+						O2OSampleApplication.eventReceived = null;  
+
+							
+							
+						Intent intent = new Intent(context, MainActivity.class);
+						startActivity(intent);
 						// finish();
 					} else {
 						Toast.makeText(context, "로그인 실패", Toast.LENGTH_SHORT)
@@ -165,7 +200,6 @@ public class Login extends Activity implements OnClickListener,
 				params.put("userPw", pw);
 				params.put("userAgent", userAgent);
 
-
 				return params;
 			}
 
@@ -180,8 +214,8 @@ public class Login extends Activity implements OnClickListener,
 			if (isChecked) {
 				Toast.makeText(getApplicationContext(), "상인입니다",
 						Toast.LENGTH_SHORT).show();
-					userAgent = "1";
-				
+				userAgent = "1";
+
 			} else {
 				Toast.makeText(getApplicationContext(), "일반 사용자입니다",
 						Toast.LENGTH_SHORT).show();

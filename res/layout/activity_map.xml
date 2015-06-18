@@ -11,9 +11,10 @@
 
         <Button
             android:id="@+id/mapnextBtn"
+            style="@style/CustomStyleBlueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="next" />
+            android:text="가입 완료" />
     </LinearLayout>
 
     <LinearLayout
@@ -30,6 +31,7 @@
 
         <Button
             android:id="@+id/searchBtn"
+            style="@style/CustomStyleRedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="검색" />

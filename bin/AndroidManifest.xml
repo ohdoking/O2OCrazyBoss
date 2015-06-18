@@ -32,21 +32,26 @@
     <application
         android:name=".action.AppController"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/crazy_boss_icon2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+          <activity
+            android:name=".activity.Intro"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <activity
             android:name=".Login"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".User_Signup"
@@ -66,7 +71,7 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".activity.AdminTabActivity"
@@ -74,11 +79,11 @@
         </activity>
         <activity
             android:name=".activity.TabActivity"
-            android:label="@string/title_activity_tab" >
+            android:label="판매자 물품 및 고객 관리" >
         </activity>
         <activity
             android:name="com.example.yapp.activity.AddItemActivity"
-            android:label="@string/title_activity_add_item" >
+            android:label="상품 등록" >
         </activity>
 
         <receiver

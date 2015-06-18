@@ -12,6 +12,7 @@ import org.json.*;
 import android.app.*;
 import android.content.*;
 import android.graphics.*;
+import android.graphics.drawable.ColorDrawable;
 import android.os.*;
 import android.util.*;
 import android.view.*;
@@ -48,8 +49,9 @@ public class MapActivity extends Activity {
 		status = intent.getIntExtra("status", 0); // comer, user status
 		checkLogin = intent.getIntExtra("map", 0);
 		
-		
-		
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
 		
 		mapData();
 		mds = new MyDataShared(context);
@@ -420,7 +422,7 @@ public class MapActivity extends Activity {
 		}
 
 		Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),
-				R.drawable.ic_launcher);
+				R.drawable.home);
 
 		// tItem.setCalloutRightButtonImage(bitmap);
 		tItem.setIcon(bitmap);
@@ -462,7 +464,7 @@ public class MapActivity extends Activity {
 			item1.setAutoCalloutVisible(true);
 
 			Bitmap bitmap_i = BitmapFactory.decodeResource(
-					context.getResources(), R.drawable.ic_launcher);
+					context.getResources(), R.drawable.shop_icon);
 
 			item1.setCalloutRightButtonImage(bitmap_i);
 

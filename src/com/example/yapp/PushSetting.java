@@ -5,6 +5,7 @@ import java.util.*;
 import android.app.*;
 import android.content.*;
 import android.graphics.*;
+import android.graphics.drawable.ColorDrawable;
 import android.os.*;
 import android.view.*;
 import android.view.View.OnClickListener;
@@ -25,6 +26,10 @@ public class PushSetting extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.push_setting);
+		
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
 
 		mds = new MyDataShared(context);
 
@@ -46,17 +51,17 @@ public class PushSetting extends Activity implements OnClickListener {
 				userFavarite = new ArrayList<String>();
 
 				if (status.length == 0) {
-					Toast.makeText(context, "최소 1개이상 선택!", Toast.LENGTH_SHORT)
+					Toast.makeText(context, "理쒖냼 1媛쒖씠���좏깮!", Toast.LENGTH_SHORT)
 							.show();
 				} else {
 
 					for (int i = 0; i < status.length; i++) {
-						if (status[i] == 1) // 선택이 되었을 때
+						if (status[i] == 1) // �좏깮���섏뿀����
 						{
 							userFavarite.add(String.valueOf(i));
 						}
 					}
-					// 저장된것 확인하기
+					// ��옣�쒓쾬 �뺤씤�섍린
 					String favoriteStr = "";
 					for (int i = 0; i < userFavarite.size(); i++) {
 						// System.out.println(userFavarite.get(i));
@@ -69,12 +74,12 @@ public class PushSetting extends Activity implements OnClickListener {
 					}
 					System.out.println("userFavorite = " + favoriteStr);
 
-					// 쉐어드에 저장
+					// �먯뼱�쒖뿉 ��옣
 					mds.put("userFavorite", favoriteStr);
 					Intent intent = new Intent(context, MapActivity.class);
 					intent.putExtra("status", staticConst.USERS_STATUS);
 					startActivity(intent);
-					Toast.makeText(context, "푸쉬 설정 완료", Toast.LENGTH_SHORT)
+					Toast.makeText(context, "�몄돩 �ㅼ젙 �꾨즺", Toast.LENGTH_SHORT)
 							.show();
 				}
 			}

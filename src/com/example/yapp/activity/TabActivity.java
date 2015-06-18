@@ -2,6 +2,8 @@ package com.example.yapp.activity;
 
 import java.util.Locale;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -40,6 +42,10 @@ public class TabActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tab);
+		
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(Color.parseColor(getResources().getString(
+						R.color.navy))));
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
@@ -102,9 +108,9 @@ public class TabActivity extends FragmentActivity {
 			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
-				return new StringBuffer("Admin Product List");
+				return new StringBuffer("殿废等 惑前 府胶飘");
 			case 1:
-				return new StringBuffer("Admin Web");
+				return new StringBuffer("规巩 绊按 包府");
 			}
 			return null;
 		}
